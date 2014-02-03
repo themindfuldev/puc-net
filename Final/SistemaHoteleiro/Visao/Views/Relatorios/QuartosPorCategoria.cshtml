@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Modelo.Dominio.CategoriaDeQuarto>
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}  
+
+@foreach (var item in Model) {
+<h3>Categoria: @Html.DisplayFor(modelItem => item.Nome)</h3>
+@Html.Action("QuartosPorCategoriaPartial", "Relatorios", new { categoriaDeQuarto = item })  
+}

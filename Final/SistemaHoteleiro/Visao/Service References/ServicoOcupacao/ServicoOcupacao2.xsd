@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Modelo.Dominio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Modelo.Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Ocupacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Conta" nillable="true" type="tns:Conta" />
+      <xs:element minOccurs="0" name="DataCheckIn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataCheckOut" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Quarto" nillable="true" type="tns:Quarto" />
+      <xs:element minOccurs="0" name="Reserva" nillable="true" type="tns:Reserva" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ocupacao" nillable="true" type="tns:Ocupacao" />
+  <xs:complexType name="Conta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" type="tns:Conta.EstadoDeConta" />
+      <xs:element minOccurs="0" name="FormaDePagamento" type="tns:FormaDePagamento" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ValorDaHospedagem" type="xs:float" />
+      <xs:element minOccurs="0" name="ValorDoFrigobar" type="xs:float" />
+      <xs:element minOccurs="0" name="ValorOutros" type="xs:float" />
+      <xs:element minOccurs="0" name="ValorTotal" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Conta" nillable="true" type="tns:Conta" />
+  <xs:simpleType name="Conta.EstadoDeConta">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pago" />
+      <xs:enumeration value="EmAberto" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Conta.EstadoDeConta" nillable="true" type="tns:Conta.EstadoDeConta" />
+  <xs:simpleType name="FormaDePagamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Dinheiro" />
+      <xs:enumeration value="Cheque" />
+      <xs:enumeration value="CartaoDeCredito" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormaDePagamento" nillable="true" type="tns:FormaDePagamento" />
+  <xs:complexType name="Quarto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoriaDeQuarto" nillable="true" type="tns:CategoriaDeQuarto" />
+      <xs:element minOccurs="0" name="Estado" type="tns:Quarto.EstadoDeQuarto" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Numero" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Ocupacoes" nillable="true" type="tns:ArrayOfOcupacao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Quarto" nillable="true" type="tns:Quarto" />
+  <xs:complexType name="CategoriaDeQuarto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorDaDiaria" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoriaDeQuarto" nillable="true" type="tns:CategoriaDeQuarto" />
+  <xs:simpleType name="Quarto.EstadoDeQuarto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Disponivel" />
+      <xs:enumeration value="Ocupado" />
+      <xs:enumeration value="EmLimpeza" />
+      <xs:enumeration value="EmManutencao" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Quarto.EstadoDeQuarto" nillable="true" type="tns:Quarto.EstadoDeQuarto" />
+  <xs:complexType name="ArrayOfOcupacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ocupacao" nillable="true" type="tns:Ocupacao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOcupacao" nillable="true" type="tns:ArrayOfOcupacao" />
+  <xs:complexType name="Reserva">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoriaDeQuarto" nillable="true" type="tns:CategoriaDeQuarto" />
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="tns:Cliente" />
+      <xs:element minOccurs="0" name="DataFim" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Estado" type="tns:Reserva.EstadoDeReserva" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reserva" nillable="true" type="tns:Reserva" />
+  <xs:complexType name="Cliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CPF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:simpleType name="Reserva.EstadoDeReserva">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ativa" />
+      <xs:enumeration value="Cancelada" />
+      <xs:enumeration value="Efetivada" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Reserva.EstadoDeReserva" nillable="true" type="tns:Reserva.EstadoDeReserva" />
+  <xs:complexType name="ArrayOfQuarto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Quarto" nillable="true" type="tns:Quarto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuarto" nillable="true" type="tns:ArrayOfQuarto" />
+</xs:schema>

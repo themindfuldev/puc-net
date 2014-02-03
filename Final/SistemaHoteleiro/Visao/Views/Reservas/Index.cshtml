@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Modelo.Dominio.Reserva>
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}
+
+@if (@ViewBag.HaClientes == true)
+{
+    <p>
+        @Html.ActionLink("Realizar reserva", "ConsultarDisponibilidade", "Reservas")
+    </p>
+}
+else
+{
+    <p>@Html.ActionLink("Insira Clientes primeiro para poder realizar reservas.", "Create", "Clientes")</p>
+}
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoriaDeQuarto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente)
+        </th>        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoriaDeQuarto.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Detalhar", "Details", new { id = item.Id }) 
+@if (item.Estado.Equals(Modelo.Dominio.Reserva.EstadoDeReserva.Ativa))
+{
+            <span>| @Html.ActionLink("Cancelar", "Delete", new { id = item.Id })</span>
+}
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,62 @@
+﻿@model Modelo.Dominio.Reserva
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}
+
+<h3>Tem certeza que deseja cancelar esta reserva?</h3><br />
+<fieldset>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataInicio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataInicio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataFim)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataFim)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoriaDeQuarto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoriaDeQuarto.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cliente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cliente.Nome)
+    </div></fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Cancelar" /> |
+        @Html.ActionLink("Visualizar todas as reservas", "Index")
+    </p>
+}

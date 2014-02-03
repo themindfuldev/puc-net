@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:23755/Servico/ServicoOcupacao.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Modelo.Dominio" />
+  <xs:element name="RegistrarCheckin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReserva" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarCheckinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Modelo.Dominio" minOccurs="0" name="RegistrarCheckinResult" nillable="true" type="q1:Ocupacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarCheckout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idQuarto" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarCheckoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Modelo.Dominio" minOccurs="0" name="RegistrarCheckoutResult" nillable="true" type="q2:Ocupacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarConta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Modelo.Dominio" minOccurs="0" name="conta" nillable="true" type="q3:Conta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarContaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarTerminoDeLimpeza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarTerminoDeLimpezaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterQuartosOcupados">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterQuartosOcupadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Modelo.Dominio" minOccurs="0" name="ObterQuartosOcupadosResult" nillable="true" type="q4:ArrayOfQuarto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

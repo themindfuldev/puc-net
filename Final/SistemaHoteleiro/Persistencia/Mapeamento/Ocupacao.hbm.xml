@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Modelo"
+                   namespace="Modelo.Dominio">
+  <class table="ocupacao" name="Ocupacao">
+    <id name="Id" column="id">
+      <generator class="identity" />
+    </id>
+    <property name="DataCheckIn" column="data_checkin" not-null="true" />
+    <property name="DataCheckOut" column="data_checkout"/>
+    <one-to-one name="Reserva" lazy="false" />
+    <many-to-one name="Conta" column="id_conta" lazy="false" />
+    <many-to-one name="Quarto" column="id_quarto" lazy="false" />
+  </class>
+</hibernate-mapping>

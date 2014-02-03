@@ -1,0 +1,40 @@
+﻿<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<h3>Contextualização</h3>
+<p><b>Sistema Hoteleiro</b> é o meu trabalho final da disciplina <b>Arquitetura de Aplicativos Ambiente .NET</b> da 4a turma do curso de pós-graduação de especialização em <a href="http://www.pucminas.br/cursos/dados_cursos.php?tipo=2&instituto=403010000&pai=339&pagina=747&menu=943&cabecalho=14&lateral=18&situacao=201201&curso=2809" target="_blank">Arquitetura de Sistemas Distribuídos</a> oferecido pelo <a href="http://www.pucminas.br/iec" target="_blank">Instituto de Educação Continuada</a> da <a href="http://www.pucminas.br" target="_blank">Pontifícia Universidade Católica de Minas Gerais</a> na unidade <a href="http://www.pucminas.br/destaques/unidades.php?unidade=204000000&pagina=888" target="_blank">São Gabriel</a>.</p>
+<h3>Sistema 28: Sistema hoteleiro</h3>
+<p>Deseja-se desenvolver um sistema para um hotel que atenda aos seguintes requisitos:</p>
+<ul>
+    <li>O hotel possui diferentes quartos que são classificados em uma das seguintes categorias: Presidencial, Econômica, Simples, Duplo ou Triplo. O valor base da diária dos quartos depende da categoria do quarto.</li>
+    <li>Quando o cliente telefona ou vem até o hotel e pede para reservar um quarto, a recepção verifica se existe quarto disponível no período solicitado. Caso positivo, o cliente é cadastrado e é feita a reserva do quarto. Caso negativo, o cliente é informado da não disponibilidade do quarto.</li>
+    <li>Quando o cliente não mais desejar o quarto reservado o funcionário providencia o cancelamento da reserva, disponibilizando novamente o quarto.</li>
+    <li>Quando o cliente ocupar um quarto reservado previamente, caracteriza-se uma ocupação do quarto.</li>
+    <li>Quando o cliente deixar o hotel será fornecida a respectiva conta e o quarto estará disponível para limpeza.</li>
+    <li>Quando o quarto estiver limpo a recepção do hotel torna-o disponível.</li>
+    <li>O cliente pode pagar a conta à vista, cheque ou usando cartão de crédito. Dados sobre a conta são importantes serem armazenados como a forma de pagamento, valor da hospedagem, total do frigobar.</li>
+</ul>
+<p>Relatórios:</p>
+<ul>
+    <li>Quartos por categoria</li>
+    <li>Quartos disponíveis por período</li>
+    <li>Faturamento do hotel por período</li>
+    <li>Todos os quartos de uma determinada categoria</li>
+    <li>Todos os quartos em processo de limpeza</li>
+    <li>Mapa geral dos quartos (ocupados, livres, em limpeza)</li>
+</ul>
+<h3>Tecnologias escolhidas</h3>
+<p>O sistema foi desenvolvido na plataforma .NET com as seguintes tecnologias:</p>
+<ul>
+    <li>Camada de visão em ASP.NET MVC 4 com Razor</li>
+    <li>Camada de negócio desenvolvida em C# e exportada como serviços WCF</li>
+    <li>Camada de persistência desenvolvida em C# e mapeada em NHibernate</li>
+    <li>Banco de dados SQL Server 2008 R2</li>
+</ul>
+<h3>Modelagem</h3>
+<p>Diagrama de casos de uso:</p>
+<img src="/Images/CasosDeUso.png" width="960" />
+<p>Diagrama de classes:</p>
+<img src="/Images/Classes.png" width="960" />

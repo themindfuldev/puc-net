@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Modelo"
+                   namespace="Modelo.Dominio">
+  <class table="categoria_de_quarto" name="CategoriaDeQuarto">
+    <id name="Id" column="id">
+      <generator class="identity" />
+    </id>
+    <property name="Nome" column="nome"/>
+    <property name="ValorDaDiaria" column="valor_da_diaria"/>
+  </class>
+</hibernate-mapping>

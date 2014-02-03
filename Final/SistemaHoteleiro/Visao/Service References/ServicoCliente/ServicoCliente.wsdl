@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicoCliente" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:23755/Servico/ServicoCliente.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:23755/Servico/ServicoCliente.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:23755/Servico/ServicoCliente.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Modelo.Dominio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicoCliente_CadastrarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_CadastrarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_AlterarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_AlterarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_ExcluirCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_ExcluirCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_ObterClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterClientes" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_ObterClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_ObterCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_ObterCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_BuscarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicoCliente_BuscarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicoCliente">
+    <wsdl:operation name="CadastrarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoCliente/CadastrarCliente" message="tns:IServicoCliente_CadastrarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoCliente/CadastrarClienteResponse" message="tns:IServicoCliente_CadastrarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoCliente/AlterarCliente" message="tns:IServicoCliente_AlterarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoCliente/AlterarClienteResponse" message="tns:IServicoCliente_AlterarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoCliente/ExcluirCliente" message="tns:IServicoCliente_ExcluirCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoCliente/ExcluirClienteResponse" message="tns:IServicoCliente_ExcluirCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoCliente/ObterClientes" message="tns:IServicoCliente_ObterClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoCliente/ObterClientesResponse" message="tns:IServicoCliente_ObterClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoCliente/ObterCliente" message="tns:IServicoCliente_ObterCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoCliente/ObterClienteResponse" message="tns:IServicoCliente_ObterCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoCliente/BuscarCliente" message="tns:IServicoCliente_BuscarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoCliente/BuscarClienteResponse" message="tns:IServicoCliente_BuscarCliente_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicoCliente" type="tns:IServicoCliente">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CadastrarCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicoCliente/CadastrarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicoCliente/AlterarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicoCliente/ExcluirCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterClientes">
+      <soap:operation soapAction="http://tempuri.org/IServicoCliente/ObterClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicoCliente/ObterCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicoCliente/BuscarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicoCliente">
+    <wsdl:port name="BasicHttpBinding_IServicoCliente" binding="tns:BasicHttpBinding_IServicoCliente">
+      <soap:address location="http://localhost:23755/Servico/ServicoCliente.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

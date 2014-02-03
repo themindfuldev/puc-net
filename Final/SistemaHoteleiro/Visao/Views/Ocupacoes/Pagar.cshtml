@@ -1,0 +1,97 @@
+﻿@model Modelo.Dominio.Conta
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}
+
+<script src="@Url.Content("~/Scripts/jquery-1.6.2.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.price_format.1.7.min.js")" type="text/javascript"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#valorDoFrigobar").priceFormat({
+            prefix: ''
+        });
+        $("#valorDoFrigobar").each(function () {
+
+            $(this).keyup(function () {
+                calculateSum();
+            });
+        });
+
+        $("#valorOutros").priceFormat({
+            prefix: ''
+        });
+        $("#valorOutros").each(function () {
+
+            $(this).keyup(function () {
+                calculateSum();
+            });
+        });
+    });
+
+    function calculateSum() {
+
+        var sum = 0;
+        sum += parseFloat($("#valorDaHospedagem").html());
+        sum += parseFloat($("#valorDoFrigobar").val());
+        sum += parseFloat($("#valorOutros").val());
+
+        $("#valorTotal").html('R$ ' + sum.toFixed(2));       
+    }
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.DisplayFor(model => model.Id)
+    
+    <fieldset>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ValorDaHospedagem)
+        </div>
+        <div class="display-field">
+            R$ <span id="valorDaHospedagem">@Html.DisplayFor(model => model.ValorDaHospedagem, null)</span>
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ValorDoFrigobar)
+        </div>
+        <div class="display-field">
+            R$ @Html.EditorFor(model => model.ValorDoFrigobar, null, "valorDoFrigobar")
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ValorOutros)
+        </div>
+        <div class="display-field">
+            R$ @Html.EditorFor(model => model.ValorOutros, null, "valorOutros")
+        </div>
+    
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </div>
+        <div class="display-field" id="valorTotal">
+            R$ @Html.DisplayFor(model => model.ValorTotal, null, "valorTotal")
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.FormaDePagamento)
+        </div>
+        <div class="display-field">
+            @Html.DropDownListFor(model => model.FormaDePagamento, (SelectList)ViewData["formasDePagamento"])
+        </div>
+
+        <p>
+            <input type="submit" value="Registrar pagamento" />
+        </p>
+
+    </fieldset>
+}

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Modelo"
+                   namespace="Modelo.Dominio">
+  <class table="quarto" name="Quarto">
+    <id name="Id" column="id">
+      <generator class="identity" />
+    </id>
+    <property name="Numero" column="numero" not-null="true" />
+    <property name="Estado" column="estado" not-null="true" />
+    <many-to-one name="CategoriaDeQuarto" column="id_categoria_de_quarto" lazy="false" />
+  </class>
+</hibernate-mapping>

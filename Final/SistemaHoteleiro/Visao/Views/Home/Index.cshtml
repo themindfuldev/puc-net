@@ -1,0 +1,49 @@
+﻿@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}
+
+@if (Request.IsAuthenticated)
+{
+<section class="features">
+    <h2>Menu de opções:</h2>
+    <section class="feature">
+        <h3>Reservas</h3>
+        <ul>
+            <li>@Html.ActionLink("Cadastro de clientes", "Index", "Clientes")</li>
+            <li>@Html.ActionLink("Cadastro de reservas", "Index", "Reservas")</li>
+        </ul>
+    </section>
+    <section class="feature">
+        <h3>Ocupações</h3>
+        <ul>
+            <li>@Html.ActionLink("Registrar check-in", "ListarCheckIn", "Ocupacoes")</li>
+            <li>@Html.ActionLink("Registrar check-out", "ListarCheckOut", "Ocupacoes")</li>
+            <li>@Html.ActionLink("Registrar término de limpeza de quarto", "RegistrarTerminoDeLimpezaDeQuarto", "Ocupacoes")</li>
+        </ul>
+    </section>
+    <section class="feature">
+        <h3>Relatórios</h3>
+        <ul>
+            <li>@Html.ActionLink("Quartos por categoria", "QuartosPorCategoria", "Relatorios")</li>
+            <li>@Html.ActionLink("Quartos disponíveis por período", "QuartosDisponiveisPorPeriodo", "Relatorios")</li>
+            <li>@Html.ActionLink("Faturamento do hotel por período", "FaturamentoDoHotelPorPeriodo", "Relatorios")</li>
+            <li>@Html.ActionLink("Quartos de uma determinada categoria", "TodosOsQuartosDeUmaDeterminadaCategoria", "Relatorios")</li>
+            <li>@Html.ActionLink("Quartos em processo de limpeza", "TodosOsQuartosEmProcessoDeLimpeza", "Relatorios")</li>
+            <li>@Html.ActionLink("Mapa geral dos quartos", "MapaGeralDosQuartos", "Relatorios")</li>
+        </ul>
+    </section>
+</section>
+}
+else
+{
+        <p>
+            Este é um sistema restrito ao uso da recepção do hotel. Para acessar sua conta, gentileza clicar na caixa cinza escrito <b>Acessar sua conta</b> no canto superior direito desta página.
+        </p>
+}

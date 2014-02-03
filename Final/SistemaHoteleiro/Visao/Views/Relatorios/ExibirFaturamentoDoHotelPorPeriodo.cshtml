@@ -1,0 +1,14 @@
+﻿@model Visao.Models.PeriodoModel
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}  
+
+<p>O faturamento do hotel no período entre @Model.DataInicio.ToString("dd/MM/yyyy") e @Model.DataFim.ToString("dd/MM/yyyy") foi de R$ @Model.Faturamento.</p>

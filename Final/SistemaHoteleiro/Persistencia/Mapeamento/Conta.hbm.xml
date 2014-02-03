@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Modelo"
+                   namespace="Modelo.Dominio">
+  <class table="conta" name="Conta">
+    <id name="Id" column="id">
+      <generator class="identity" />
+    </id>
+    <property name="ValorDaHospedagem" column="valor_da_hospedagem" not-null="true" />
+    <property name="ValorDoFrigobar" column="valor_do_frigobar" not-null="true" />
+    <property name="ValorOutros" column="valor_outros" not-null="true" />
+    <property name="ValorTotal" column="valor_total" not-null="true" />
+    <property name="FormaDePagamento" column="forma_de_pagamento" not-null="true" />
+    <property name="Estado" column="estado" not-null="true" />
+  </class>
+</hibernate-mapping>

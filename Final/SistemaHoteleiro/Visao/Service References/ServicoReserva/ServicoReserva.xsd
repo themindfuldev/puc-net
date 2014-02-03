@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:23755/Servico/ServicoReserva.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Modelo.Dominio" />
+  <xs:element name="ObterCategoriasDeQuarto">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterCategoriasDeQuartoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Modelo.Dominio" minOccurs="0" name="ObterCategoriasDeQuartoResult" nillable="true" type="q1:ArrayOfCategoriaDeQuarto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDisponibilidade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataFim" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="idCategoriaDeQuarto" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDisponibilidadeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultarDisponibilidadeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReservarQuarto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataFim" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="idCategoriaDeQuarto" type="xs:long" />
+        <xs:element minOccurs="0" name="idCliente" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReservarQuartoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReservarQuartoResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarReservas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCliente" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarReservasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Modelo.Dominio" minOccurs="0" name="ConsultarReservasResult" nillable="true" type="q2:ArrayOfReserva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterReservas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterReservasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Modelo.Dominio" minOccurs="0" name="ObterReservasResult" nillable="true" type="q3:ArrayOfReserva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterReservasParaCheckin">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterReservasParaCheckinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Modelo.Dominio" minOccurs="0" name="ObterReservasParaCheckinResult" nillable="true" type="q4:ArrayOfReserva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterReserva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReserva" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterReservaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Modelo.Dominio" minOccurs="0" name="ObterReservaResult" nillable="true" type="q5:Reserva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarReserva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReserva" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarReservaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

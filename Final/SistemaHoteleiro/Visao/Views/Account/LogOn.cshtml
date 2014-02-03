@@ -1,0 +1,39 @@
+﻿@model Visao.Models.LogOnModel
+
+@{
+    ViewBag.Title = "Acessar sua conta";
+}
+
+<hgroup class="title">
+    <h2>Digite seu usuário e senha abaixo.</h2>
+</hgroup>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@Html.ValidationSummary(true, "Acesso negado. Favor corrigir os erros e tentar novamente.")
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "Account")) {
+    <fieldset>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)<br />
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)<br />
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+        </ol>
+        <input type="submit" value="Acessar" title="Acessar" />
+    </fieldset>
+@*    <p>
+        @Html.ActionLink("Register", "Register") if you don't have an account.
+    </p> *@
+}

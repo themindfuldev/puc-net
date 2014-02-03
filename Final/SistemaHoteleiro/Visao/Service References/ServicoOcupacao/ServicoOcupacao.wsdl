@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicoOcupacao" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:23755/Servico/ServicoOcupacao.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:23755/Servico/ServicoOcupacao.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:23755/Servico/ServicoOcupacao.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Modelo.Dominio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicoOcupacao_RegistrarCheckin_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarCheckin" />
+  </wsdl:message>
+  <wsdl:message name="IServicoOcupacao_RegistrarCheckin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarCheckinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoOcupacao_RegistrarCheckout_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarCheckout" />
+  </wsdl:message>
+  <wsdl:message name="IServicoOcupacao_RegistrarCheckout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarCheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoOcupacao_PagarConta_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagarConta" />
+  </wsdl:message>
+  <wsdl:message name="IServicoOcupacao_PagarConta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagarContaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoOcupacao_RegistrarTerminoDeLimpeza_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarTerminoDeLimpeza" />
+  </wsdl:message>
+  <wsdl:message name="IServicoOcupacao_RegistrarTerminoDeLimpeza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarTerminoDeLimpezaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoOcupacao_ObterQuartosOcupados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterQuartosOcupados" />
+  </wsdl:message>
+  <wsdl:message name="IServicoOcupacao_ObterQuartosOcupados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterQuartosOcupadosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicoOcupacao">
+    <wsdl:operation name="RegistrarCheckin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoOcupacao/RegistrarCheckin" message="tns:IServicoOcupacao_RegistrarCheckin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoOcupacao/RegistrarCheckinResponse" message="tns:IServicoOcupacao_RegistrarCheckin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarCheckout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoOcupacao/RegistrarCheckout" message="tns:IServicoOcupacao_RegistrarCheckout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoOcupacao/RegistrarCheckoutResponse" message="tns:IServicoOcupacao_RegistrarCheckout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarConta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoOcupacao/PagarConta" message="tns:IServicoOcupacao_PagarConta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoOcupacao/PagarContaResponse" message="tns:IServicoOcupacao_PagarConta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarTerminoDeLimpeza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoOcupacao/RegistrarTerminoDeLimpeza" message="tns:IServicoOcupacao_RegistrarTerminoDeLimpeza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoOcupacao/RegistrarTerminoDeLimpezaResponse" message="tns:IServicoOcupacao_RegistrarTerminoDeLimpeza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterQuartosOcupados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicoOcupacao/ObterQuartosOcupados" message="tns:IServicoOcupacao_ObterQuartosOcupados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicoOcupacao/ObterQuartosOcupadosResponse" message="tns:IServicoOcupacao_ObterQuartosOcupados_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicoOcupacao" type="tns:IServicoOcupacao">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarCheckin">
+      <soap:operation soapAction="http://tempuri.org/IServicoOcupacao/RegistrarCheckin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarCheckout">
+      <soap:operation soapAction="http://tempuri.org/IServicoOcupacao/RegistrarCheckout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarConta">
+      <soap:operation soapAction="http://tempuri.org/IServicoOcupacao/PagarConta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarTerminoDeLimpeza">
+      <soap:operation soapAction="http://tempuri.org/IServicoOcupacao/RegistrarTerminoDeLimpeza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterQuartosOcupados">
+      <soap:operation soapAction="http://tempuri.org/IServicoOcupacao/ObterQuartosOcupados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicoOcupacao">
+    <wsdl:port name="BasicHttpBinding_IServicoOcupacao" binding="tns:BasicHttpBinding_IServicoOcupacao">
+      <soap:address location="http://localhost:23755/Servico/ServicoOcupacao.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

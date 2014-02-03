@@ -1,0 +1,49 @@
+﻿@model Visao.Models.ReservaModel
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}
+
+<h3>Está disponível! Deseja efetuar esta reserva?</h3><br />
+
+<fieldset>
+    <div class="display-label">
+        @Html.LabelFor(model => model.DataInicio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataInicio)
+    </div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.DataFim)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataFim)
+    </div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.IdCategoriaDeQuarto)
+    </div>
+    <div class="display-field">
+        @Html.DropDownListFor(model => model.IdCategoriaDeQuarto, (SelectList)ViewData["categoriasDeQuarto"], "--", new { disabled="disabled" })
+    </div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.ValorDaReserva)
+    </div>
+    <div class="display-field">
+        R$ @Html.DisplayFor(model => model.ValorDaReserva)
+    </div>
+
+@using (Html.BeginForm("EscolherCliente", "Reservas"))
+{
+    <p>
+        <input type="submit" value="Confirmar" />
+        @Html.ActionLink("Voltar", "ConsultarDisponibilidade")
+    </p>
+}
+</fieldset>

@@ -1,0 +1,64 @@
+﻿@model Modelo.Dominio.Ocupacao
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}
+
+@if (ViewBag.Result != null)
+{
+    <h3 style="color: Red">@ViewBag.Result </h3><br />
+}
+else
+{
+    <fieldset>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Id)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Id)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.DataCheckIn)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DataCheckIn)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Quarto)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Quarto.Numero)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Reserva)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Reserva.Id)
+        </div>
+
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Reserva.CategoriaDeQuarto)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Reserva.CategoriaDeQuarto.Nome)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Reserva.Cliente)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Reserva.Cliente.Nome)
+        </div>
+    </fieldset>
+}

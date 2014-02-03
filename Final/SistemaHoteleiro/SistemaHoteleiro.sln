@@ -1,0 +1,95 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{25F4B082-E1EE-4412-B238-2D60AC0FA44A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia.Test", "Persistencia.Test\Persistencia.Test.csproj", "{FBA89BF9-2DDA-4090-AF94-3561413450E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52085503-1102-456D-A092-ECE0D0BCE21D}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		SistemaHoteleiro.vsmdi = SistemaHoteleiro.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{A0D70705-507D-40B4-9E4D-C7C6D7F41619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{A8964FE6-F784-4AC4-ACDD-C468F327F5EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visao", "Visao\Visao.csproj", "{E199A038-66EA-48CC-B79C-FED5F965B9B9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A0D70705-507D-40B4-9E4D-C7C6D7F41619} = {A0D70705-507D-40B4-9E4D-C7C6D7F41619}
+	EndProjectSection
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Negocio.Azure", "Negocio.Azure\Negocio.Azure.ccproj", "{654FBD43-9B9D-4461-A365-45934DE37A37}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Visao.Azure", "Visao.Azure\Visao.Azure.ccproj", "{66F450BF-81A9-4D5B-9ABD-50B6D28339A0}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs17
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Modelo\\Modelo.csproj
+		SccProjectName1 = Modelo
+		SccLocalPath1 = Modelo
+		SccProjectUniqueName2 = Negocio\\Negocio.csproj
+		SccProjectName2 = Negocio
+		SccLocalPath2 = Negocio
+		SccProjectUniqueName3 = Persistencia.Test\\Persistencia.Test.csproj
+		SccProjectName3 = Persistencia.Test
+		SccLocalPath3 = Persistencia.Test
+		SccProjectUniqueName4 = Persistencia\\Persistencia.csproj
+		SccProjectName4 = Persistencia
+		SccLocalPath4 = Persistencia
+		SccProjectUniqueName5 = Visao\\Visao.csproj
+		SccProjectName5 = Visao
+		SccLocalPath5 = Visao
+		SccProjectUniqueName6 = Negocio.Azure\\Negocio.Azure.ccproj
+		SccProjectName6 = Negocio.Azure
+		SccLocalPath6 = Negocio.Azure
+		SccProjectUniqueName7 = Visao.Azure\\Visao.Azure.ccproj
+		SccProjectName7 = Visao.Azure
+		SccLocalPath7 = Visao.Azure
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SistemaHoteleiro.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25F4B082-E1EE-4412-B238-2D60AC0FA44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25F4B082-E1EE-4412-B238-2D60AC0FA44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25F4B082-E1EE-4412-B238-2D60AC0FA44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25F4B082-E1EE-4412-B238-2D60AC0FA44A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA89BF9-2DDA-4090-AF94-3561413450E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA89BF9-2DDA-4090-AF94-3561413450E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA89BF9-2DDA-4090-AF94-3561413450E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D70705-507D-40B4-9E4D-C7C6D7F41619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D70705-507D-40B4-9E4D-C7C6D7F41619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D70705-507D-40B4-9E4D-C7C6D7F41619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D70705-507D-40B4-9E4D-C7C6D7F41619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8964FE6-F784-4AC4-ACDD-C468F327F5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8964FE6-F784-4AC4-ACDD-C468F327F5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8964FE6-F784-4AC4-ACDD-C468F327F5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8964FE6-F784-4AC4-ACDD-C468F327F5EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E199A038-66EA-48CC-B79C-FED5F965B9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E199A038-66EA-48CC-B79C-FED5F965B9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E199A038-66EA-48CC-B79C-FED5F965B9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E199A038-66EA-48CC-B79C-FED5F965B9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{654FBD43-9B9D-4461-A365-45934DE37A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{654FBD43-9B9D-4461-A365-45934DE37A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{654FBD43-9B9D-4461-A365-45934DE37A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{654FBD43-9B9D-4461-A365-45934DE37A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66F450BF-81A9-4D5B-9ABD-50B6D28339A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66F450BF-81A9-4D5B-9ABD-50B6D28339A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66F450BF-81A9-4D5B-9ABD-50B6D28339A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66F450BF-81A9-4D5B-9ABD-50B6D28339A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

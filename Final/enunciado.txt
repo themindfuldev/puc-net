@@ -1,0 +1,37 @@
+28.  Sistema hoteleiro
+
+Deseja-se desenvolver um sistema para um hotel que atenda aos seguintes requisitos. 
+
+O hotel possui diferentes quartos que são classificados em uma das seguintes categorias: 
+Presidencial, Econômica, Simples, Duplo ou Triplo. O valor base da diária dos quartos 
+depende da categoria do quarto.
+
+ Quando o cliente telefona ou vem até o hotel e pede 
+para reservar um quarto a recepção verifica se existe quarto disponível no período 
+solicitado. Caso positivo, o cliente é cadastrado e é feita a reserva do quarto. 
+Caso negativo, o cliente é informado da não disponibilidade do quarto.
+
+ Quando o 
+cliente não mais desejar o quarto reservado o funcionário providencia o cancelamento
+ da reserva, disponibilizando novamente o quarto. 
+ 
+ Quando o cliente ocupar um quarto 
+ reservado previamente, caracteriza-se uma ocupação do quarto. Quando o cliente deixar
+ o hotel será fornecida a respectiva conta e o quarto estará disponível para limpeza. 
+ 
+ Quando o quarto estiver limpo a recepção do hotel torna-o disponível. 
+ 
+ O cliente pode 
+ pagar a conta à vista, cheque ou usando cartão de crédito. Dados sobre a conta são 
+ importantes serem armazenados como a forma de pagamento, valor da hospedagem, total 
+ do frigobar. 
+
+Relatórios
+
+•	Quartos por categoria
+•	Quartos disponíveis por período
+•	Faturamento do hotel por período
+•	Todos os quartos de uma determinada categoria
+•	Todos os quartos em processo de limpeza
+•	Mapa geral dos quartos ( ocupados, livres, em limpeza)
+

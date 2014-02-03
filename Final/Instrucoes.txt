@@ -1,0 +1,32 @@
+Oi Jeferson,
+
+Meu trabalho foi o numero 28 - Sistema Hoteleiro.
+
+1) Código-fonte
+Em anexo encontra-se todo o código fonte do projeto.
+Alem disso, o código do projeto foi disponibilizado como open-source no seguinte website: https://sistemahoteleiro.codeplex.com/
+Voce pode baixar o código por aqui: https://sistemahoteleiro.codeplex.com/SourceControl/list/changesets
+
+2) Hospedagem
+O sistema está hospedado no Windows Azure em 3 nós: SQL Azure (banco) + Aplicação WCF + Aplicação Web.
+
+3) Aplicação web
+Nó web: http://hoteleiro.cloudapp.net/
+- Para acessar as opções, fazer login com a seguinte credencial:
+usuario: hoteleiro
+senha: dotnet
+
+- A página sobre fala a respeito do sistema, apresentando diagramas UML
+- A página autor fala a respeito mim
+
+4) Aplicação WCF
+Nó WCF: http://hoteleiro-negocio.cloudapp.net
+Serviços:
+http://hoteleiro-negocio.cloudapp.net/Servico/ServicoCliente.svc
+http://hoteleiro-negocio.cloudapp.net/Servico/ServicoOcupacao.svc
+http://hoteleiro-negocio.cloudapp.net/Servico/ServicoRelatorio.svc
+http://hoteleiro-negocio.cloudapp.net/Servico/ServicoReserva.svc
+
+Grato,
+
+Tiago Romero Garcia

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Modelo.Dominio.Quarto>
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}
+
+<table>
+    <tr>
+        <th style="width:70px;">@Html.DisplayNameFor(model => model.Numero)</th>
+        <th>@Html.DisplayNameFor(model => model.CategoriaDeQuarto)</th>
+    </tr>  
+
+@foreach (var item in Model) {
+        <tr>
+        <td>@Html.DisplayFor(modelItem => item.Numero)</td>
+        <td>@Html.DisplayFor(modelItem => item.CategoriaDeQuarto.Nome)</td>
+    </tr>    
+}
+</table>

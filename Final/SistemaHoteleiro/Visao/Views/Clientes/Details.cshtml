@@ -1,0 +1,48 @@
+﻿@model Modelo.Dominio.Cliente
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}
+
+<fieldset>
+    <legend>Cliente</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CPF)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CPF)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Telefone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefone)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Visualizar todos os clientes", "Index")
+</p>

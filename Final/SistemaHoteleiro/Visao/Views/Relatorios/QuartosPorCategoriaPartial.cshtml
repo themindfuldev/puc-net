@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Modelo.Dominio.Quarto>
+
+@{
+    Layout = null;
+}
+
+<table style="margin-left: 50px;">
+    <tr>
+        <th style="width:70px;">@Html.DisplayNameFor(model => model.Numero)</th>
+        <th style="width:120px;">@Html.DisplayNameFor(model => model.Estado)</th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Numero)</td>
+        <td>@Html.DisplayFor(modelItem => item.Estado)</td>
+    </tr> 
+}
+</table>   

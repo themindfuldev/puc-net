@@ -1,0 +1,51 @@
+﻿@model Modelo.Dominio.Cliente
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
+</section>
+}
+
+<h3>Tem certeza que deseja deletar este cliente?</h3><br />
+<fieldset>
+    <legend>Cliente</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CPF)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CPF)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Telefone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefone)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Visualizar todos os clientes", "Index")
+    </p>
+}
